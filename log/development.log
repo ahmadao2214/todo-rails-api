@@ -503,3 +503,757 @@ Processing by TodosController#index as */*
 Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 13:47:34 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x00558df9dc23c8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 37ms (Views: 10.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/auth/login" for 127.0.0.1 at 2019-01-16 13:48:09 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 13:48:21 -0600
+Processing by V1::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x00558df9dc23c8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/login?email=foo@bar.com&password=[FILTERED]" for 127.0.0.1 at 2019-01-16 13:49:07 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/auth/login?email=foo@bar.com&password=[FILTERED]" for 127.0.0.1 at 2019-01-16 13:49:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 13:50:28 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x00558df9dc23c8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 13:50:39 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v2+json
+  Parameters: {"contraints"=>#<ApiVersion:0x00558df9dc23c8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:01:14 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V2::TodosController#index as application/vnd.todos.v2+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:01:24 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:01:32 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:02:07 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:02:14 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v2+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:02:24 -0600
+Processing by V2::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d760280 @version="v2", @default=false>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:03:51 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d6ef670 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 37ms (Views: 9.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:03:57 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v2+json
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:04:01 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055937d6ef670 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/todos/1/items?name=Listen%20to%20Don%20Giovanni" for 127.0.0.1 at 2019-01-16 14:10:53 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ItemsController#create as application/vnd.todos.v1+json
+  Parameters: {"name"=>"Listen to Don Giovanni", "contraints"=>#<ApiVersion:0x0055714782d9b8 @version="v1", @default=true>, "todo_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 404 Not Found in 31ms (Views: 6.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/todos/2/items?name=Listen%20to%20Don%20Giovanni" for 127.0.0.1 at 2019-01-16 14:10:59 -0600
+Processing by V1::ItemsController#create as application/vnd.todos.v1+json
+  Parameters: {"name"=>"Listen to Don Giovanni", "contraints"=>#<ApiVersion:0x0055714782d9b8 @version="v1", @default=true>, "todo_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/todos/3/items?name=Listen%20to%20Don%20Giovanni" for 127.0.0.1 at 2019-01-16 14:11:03 -0600
+Processing by V1::ItemsController#create as application/vnd.todos.v1+json
+  Parameters: {"name"=>"Listen to Don Giovanni", "contraints"=>#<ApiVersion:0x0055714782d9b8 @version="v1", @default=true>, "todo_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: :contraints, :todo_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Listen to Don Giovanni"], ["todo_id", 3], ["created_at", "2019-01-16 20:11:03.262681"], ["updated_at", "2019-01-16 20:11:03.262681"]]
+  [1m[35m (89.8ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 3]]
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (15.83ms)
+Completed 201 Created in 153ms (Views: 30.3ms | ActiveRecord: 91.6ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2019-01-16 14:11:22 -0600
+Processing by V1::TodosController#create as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055714782d9b8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :contraints
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 17ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:12:08 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0055714782d9b8 @version="v1", @default=true>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."created_by" = ?[0m  [["created_by", "1"]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 3]]
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.03ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-16 14:15:54 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x0056172f43c460 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "1"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 3]]
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.73ms)
+Completed 200 OK in 81ms (Views: 48.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/todos?page=1" for 127.0.0.1 at 2019-01-16 14:16:16 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"1", "contraints"=>#<ApiVersion:0x0056172f43c460 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "1"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 3]]
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.16ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/todos?page=2" for 127.0.0.1 at 2019-01-16 14:16:20 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"2", "contraints"=>#<ApiVersion:0x0056172f43c460 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "1"], ["LIMIT", 20], ["OFFSET", 20]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "excepturi"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.171274"], ["updated_at", "2019-01-16 20:19:09.171274"]]
+  [1m[35m (40.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "soluta"], ["done", "f"], ["todo_id", 4], ["created_at", "2019-01-16 20:19:09.232652"], ["updated_at", "2019-01-16 20:19:09.232652"]]
+  [1m[35m (47.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ut"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.282897"], ["updated_at", "2019-01-16 20:19:09.282897"]]
+  [1m[35m (53.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "voluptatibus"], ["done", "f"], ["todo_id", 5], ["created_at", "2019-01-16 20:19:09.338472"], ["updated_at", "2019-01-16 20:19:09.338472"]]
+  [1m[35m (50.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "et"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.391181"], ["updated_at", "2019-01-16 20:19:09.391181"]]
+  [1m[35m (52.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ipsum"], ["done", "f"], ["todo_id", 6], ["created_at", "2019-01-16 20:19:09.447012"], ["updated_at", "2019-01-16 20:19:09.447012"]]
+  [1m[35m (64.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "et"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.515159"], ["updated_at", "2019-01-16 20:19:09.515159"]]
+  [1m[35m (61.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "et"], ["done", "f"], ["todo_id", 7], ["created_at", "2019-01-16 20:19:09.580750"], ["updated_at", "2019-01-16 20:19:09.580750"]]
+  [1m[35m (51.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ipsa"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.637054"], ["updated_at", "2019-01-16 20:19:09.637054"]]
+  [1m[35m (52.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sunt"], ["done", "f"], ["todo_id", 8], ["created_at", "2019-01-16 20:19:09.694492"], ["updated_at", "2019-01-16 20:19:09.694492"]]
+  [1m[35m (60.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "iste"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.758804"], ["updated_at", "2019-01-16 20:19:09.758804"]]
+  [1m[35m (61.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "enim"], ["done", "f"], ["todo_id", 9], ["created_at", "2019-01-16 20:19:09.822424"], ["updated_at", "2019-01-16 20:19:09.822424"]]
+  [1m[35m (59.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dicta"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.884748"], ["updated_at", "2019-01-16 20:19:09.884748"]]
+  [1m[35m (52.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "non"], ["done", "f"], ["todo_id", 10], ["created_at", "2019-01-16 20:19:09.939528"], ["updated_at", "2019-01-16 20:19:09.939528"]]
+  [1m[35m (48.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "culpa"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:09.992600"], ["updated_at", "2019-01-16 20:19:09.992600"]]
+  [1m[35m (51.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ex"], ["done", "f"], ["todo_id", 11], ["created_at", "2019-01-16 20:19:10.049774"], ["updated_at", "2019-01-16 20:19:10.049774"]]
+  [1m[35m (52.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "voluptas"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.107741"], ["updated_at", "2019-01-16 20:19:10.107741"]]
+  [1m[35m (50.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "magnam"], ["done", "f"], ["todo_id", 12], ["created_at", "2019-01-16 20:19:10.162359"], ["updated_at", "2019-01-16 20:19:10.162359"]]
+  [1m[35m (47.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sed"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.216206"], ["updated_at", "2019-01-16 20:19:10.216206"]]
+  [1m[35m (49.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dolorem"], ["done", "f"], ["todo_id", 13], ["created_at", "2019-01-16 20:19:10.271037"], ["updated_at", "2019-01-16 20:19:10.271037"]]
+  [1m[35m (47.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "eum"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.321746"], ["updated_at", "2019-01-16 20:19:10.321746"]]
+  [1m[35m (53.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ducimus"], ["done", "f"], ["todo_id", 14], ["created_at", "2019-01-16 20:19:10.378086"], ["updated_at", "2019-01-16 20:19:10.378086"]]
+  [1m[35m (45.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "atque"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.428582"], ["updated_at", "2019-01-16 20:19:10.428582"]]
+  [1m[35m (43.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ab"], ["done", "f"], ["todo_id", 15], ["created_at", "2019-01-16 20:19:10.476562"], ["updated_at", "2019-01-16 20:19:10.476562"]]
+  [1m[35m (42.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "porro"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.526117"], ["updated_at", "2019-01-16 20:19:10.526117"]]
+  [1m[35m (45.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "qui"], ["done", "f"], ["todo_id", 16], ["created_at", "2019-01-16 20:19:10.577101"], ["updated_at", "2019-01-16 20:19:10.577101"]]
+  [1m[35m (43.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ex"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.625157"], ["updated_at", "2019-01-16 20:19:10.625157"]]
+  [1m[35m (45.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "iusto"], ["done", "f"], ["todo_id", 17], ["created_at", "2019-01-16 20:19:10.672581"], ["updated_at", "2019-01-16 20:19:10.672581"]]
+  [1m[35m (50.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "nulla"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.725365"], ["updated_at", "2019-01-16 20:19:10.725365"]]
+  [1m[35m (51.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "rerum"], ["done", "f"], ["todo_id", 18], ["created_at", "2019-01-16 20:19:10.781129"], ["updated_at", "2019-01-16 20:19:10.781129"]]
+  [1m[35m (54.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "fuga"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.840944"], ["updated_at", "2019-01-16 20:19:10.840944"]]
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "molestiae"], ["done", "f"], ["todo_id", 19], ["created_at", "2019-01-16 20:19:10.905755"], ["updated_at", "2019-01-16 20:19:10.905755"]]
+  [1m[35m (52.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "et"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:10.961240"], ["updated_at", "2019-01-16 20:19:10.961240"]]
+  [1m[35m (59.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "vero"], ["done", "f"], ["todo_id", 20], ["created_at", "2019-01-16 20:19:11.022335"], ["updated_at", "2019-01-16 20:19:11.022335"]]
+  [1m[35m (59.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "veniam"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.086416"], ["updated_at", "2019-01-16 20:19:11.086416"]]
+  [1m[35m (61.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "et"], ["done", "f"], ["todo_id", 21], ["created_at", "2019-01-16 20:19:11.150557"], ["updated_at", "2019-01-16 20:19:11.150557"]]
+  [1m[35m (64.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "excepturi"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.217856"], ["updated_at", "2019-01-16 20:19:11.217856"]]
+  [1m[35m (53.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "nihil"], ["done", "f"], ["todo_id", 22], ["created_at", "2019-01-16 20:19:11.277206"], ["updated_at", "2019-01-16 20:19:11.277206"]]
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "delectus"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.359567"], ["updated_at", "2019-01-16 20:19:11.359567"]]
+  [1m[35m (46.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "facilis"], ["done", "f"], ["todo_id", 23], ["created_at", "2019-01-16 20:19:11.410749"], ["updated_at", "2019-01-16 20:19:11.410749"]]
+  [1m[35m (48.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "voluptas"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.463618"], ["updated_at", "2019-01-16 20:19:11.463618"]]
+  [1m[35m (49.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "id"], ["done", "f"], ["todo_id", 24], ["created_at", "2019-01-16 20:19:11.515399"], ["updated_at", "2019-01-16 20:19:11.515399"]]
+  [1m[35m (52.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "natus"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.570605"], ["updated_at", "2019-01-16 20:19:11.570605"]]
+  [1m[35m (47.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "fugiat"], ["done", "f"], ["todo_id", 25], ["created_at", "2019-01-16 20:19:11.620080"], ["updated_at", "2019-01-16 20:19:11.620080"]]
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "qui"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.669241"], ["updated_at", "2019-01-16 20:19:11.669241"]]
+  [1m[35m (47.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "rerum"], ["done", "f"], ["todo_id", 26], ["created_at", "2019-01-16 20:19:11.718560"], ["updated_at", "2019-01-16 20:19:11.718560"]]
+  [1m[35m (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "quos"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.768221"], ["updated_at", "2019-01-16 20:19:11.768221"]]
+  [1m[35m (49.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "explicabo"], ["done", "f"], ["todo_id", 27], ["created_at", "2019-01-16 20:19:11.819419"], ["updated_at", "2019-01-16 20:19:11.819419"]]
+  [1m[35m (45.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "vel"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.867130"], ["updated_at", "2019-01-16 20:19:11.867130"]]
+  [1m[35m (56.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "nulla"], ["done", "f"], ["todo_id", 28], ["created_at", "2019-01-16 20:19:11.925582"], ["updated_at", "2019-01-16 20:19:11.925582"]]
+  [1m[35m (46.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "quo"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:11.974138"], ["updated_at", "2019-01-16 20:19:11.974138"]]
+  [1m[35m (57.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dignissimos"], ["done", "f"], ["todo_id", 29], ["created_at", "2019-01-16 20:19:12.033986"], ["updated_at", "2019-01-16 20:19:12.033986"]]
+  [1m[35m (55.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "facere"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.091331"], ["updated_at", "2019-01-16 20:19:12.091331"]]
+  [1m[35m (53.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sed"], ["done", "f"], ["todo_id", 30], ["created_at", "2019-01-16 20:19:12.146947"], ["updated_at", "2019-01-16 20:19:12.146947"]]
+  [1m[35m (58.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "accusantium"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.207943"], ["updated_at", "2019-01-16 20:19:12.207943"]]
+  [1m[35m (59.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "enim"], ["done", "f"], ["todo_id", 31], ["created_at", "2019-01-16 20:19:12.270478"], ["updated_at", "2019-01-16 20:19:12.270478"]]
+  [1m[35m (56.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "provident"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.331696"], ["updated_at", "2019-01-16 20:19:12.331696"]]
+  [1m[35m (69.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "qui"], ["done", "f"], ["todo_id", 32], ["created_at", "2019-01-16 20:19:12.403755"], ["updated_at", "2019-01-16 20:19:12.403755"]]
+  [1m[35m (61.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "labore"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.470865"], ["updated_at", "2019-01-16 20:19:12.470865"]]
+  [1m[35m (63.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "id"], ["done", "f"], ["todo_id", 33], ["created_at", "2019-01-16 20:19:12.539576"], ["updated_at", "2019-01-16 20:19:12.539576"]]
+  [1m[35m (57.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ut"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.604035"], ["updated_at", "2019-01-16 20:19:12.604035"]]
+  [1m[35m (49.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "quae"], ["done", "f"], ["todo_id", 34], ["created_at", "2019-01-16 20:19:12.660254"], ["updated_at", "2019-01-16 20:19:12.660254"]]
+  [1m[35m (53.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "commodi"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.718196"], ["updated_at", "2019-01-16 20:19:12.718196"]]
+  [1m[35m (44.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cum"], ["done", "f"], ["todo_id", 35], ["created_at", "2019-01-16 20:19:12.767250"], ["updated_at", "2019-01-16 20:19:12.767250"]]
+  [1m[35m (43.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "officiis"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.821036"], ["updated_at", "2019-01-16 20:19:12.821036"]]
+  [1m[35m (54.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dolores"], ["done", "f"], ["todo_id", 36], ["created_at", "2019-01-16 20:19:12.881961"], ["updated_at", "2019-01-16 20:19:12.881961"]]
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "illo"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:12.931496"], ["updated_at", "2019-01-16 20:19:12.931496"]]
+  [1m[35m (43.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "veritatis"], ["done", "f"], ["todo_id", 37], ["created_at", "2019-01-16 20:19:12.980555"], ["updated_at", "2019-01-16 20:19:12.980555"]]
+  [1m[35m (45.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "et"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.040715"], ["updated_at", "2019-01-16 20:19:13.040715"]]
+  [1m[35m (50.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ut"], ["done", "f"], ["todo_id", 38], ["created_at", "2019-01-16 20:19:13.095997"], ["updated_at", "2019-01-16 20:19:13.095997"]]
+  [1m[35m (44.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "qui"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.145870"], ["updated_at", "2019-01-16 20:19:13.145870"]]
+  [1m[35m (46.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "velit"], ["done", "f"], ["todo_id", 39], ["created_at", "2019-01-16 20:19:13.200390"], ["updated_at", "2019-01-16 20:19:13.200390"]]
+  [1m[35m (54.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "magni"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.258762"], ["updated_at", "2019-01-16 20:19:13.258762"]]
+  [1m[35m (49.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "aut"], ["done", "f"], ["todo_id", 40], ["created_at", "2019-01-16 20:19:13.310751"], ["updated_at", "2019-01-16 20:19:13.310751"]]
+  [1m[35m (51.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "accusantium"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.367451"], ["updated_at", "2019-01-16 20:19:13.367451"]]
+  [1m[35m (46.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "in"], ["done", "f"], ["todo_id", 41], ["created_at", "2019-01-16 20:19:13.416553"], ["updated_at", "2019-01-16 20:19:13.416553"]]
+  [1m[35m (45.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "cumque"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.469516"], ["updated_at", "2019-01-16 20:19:13.469516"]]
+  [1m[35m (49.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "cum"], ["done", "f"], ["todo_id", 42], ["created_at", "2019-01-16 20:19:13.523345"], ["updated_at", "2019-01-16 20:19:13.523345"]]
+  [1m[35m (46.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aut"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.571732"], ["updated_at", "2019-01-16 20:19:13.571732"]]
+  [1m[35m (57.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "est"], ["done", "f"], ["todo_id", 43], ["created_at", "2019-01-16 20:19:13.633283"], ["updated_at", "2019-01-16 20:19:13.633283"]]
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "quia"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.678763"], ["updated_at", "2019-01-16 20:19:13.678763"]]
+  [1m[35m (50.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "est"], ["done", "f"], ["todo_id", 44], ["created_at", "2019-01-16 20:19:13.732891"], ["updated_at", "2019-01-16 20:19:13.732891"]]
+  [1m[35m (41.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "rerum"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.779156"], ["updated_at", "2019-01-16 20:19:13.779156"]]
+  [1m[35m (47.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "aut"], ["done", "f"], ["todo_id", 45], ["created_at", "2019-01-16 20:19:13.828730"], ["updated_at", "2019-01-16 20:19:13.828730"]]
+  [1m[35m (45.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "voluptate"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.876601"], ["updated_at", "2019-01-16 20:19:13.876601"]]
+  [1m[35m (50.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "expedita"], ["done", "f"], ["todo_id", 46], ["created_at", "2019-01-16 20:19:13.929060"], ["updated_at", "2019-01-16 20:19:13.929060"]]
+  [1m[35m (49.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "odit"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:13.983837"], ["updated_at", "2019-01-16 20:19:13.983837"]]
+  [1m[35m (46.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "in"], ["done", "f"], ["todo_id", 47], ["created_at", "2019-01-16 20:19:14.032449"], ["updated_at", "2019-01-16 20:19:14.032449"]]
+  [1m[35m (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sed"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.086957"], ["updated_at", "2019-01-16 20:19:14.086957"]]
+  [1m[35m (48.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "velit"], ["done", "f"], ["todo_id", 48], ["created_at", "2019-01-16 20:19:14.142431"], ["updated_at", "2019-01-16 20:19:14.142431"]]
+  [1m[35m (53.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "architecto"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.200348"], ["updated_at", "2019-01-16 20:19:14.200348"]]
+  [1m[35m (42.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "aut"], ["done", "f"], ["todo_id", 49], ["created_at", "2019-01-16 20:19:14.246783"], ["updated_at", "2019-01-16 20:19:14.246783"]]
+  [1m[35m (47.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aut"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.300502"], ["updated_at", "2019-01-16 20:19:14.300502"]]
+  [1m[35m (51.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "in"], ["done", "f"], ["todo_id", 50], ["created_at", "2019-01-16 20:19:14.356646"], ["updated_at", "2019-01-16 20:19:14.356646"]]
+  [1m[35m (54.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "quisquam"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.413840"], ["updated_at", "2019-01-16 20:19:14.413840"]]
+  [1m[35m (61.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "occaecati"], ["done", "f"], ["todo_id", 51], ["created_at", "2019-01-16 20:19:14.477546"], ["updated_at", "2019-01-16 20:19:14.477546"]]
+  [1m[35m (57.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ad"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.537765"], ["updated_at", "2019-01-16 20:19:14.537765"]]
+  [1m[35m (62.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dolor"], ["done", "f"], ["todo_id", 52], ["created_at", "2019-01-16 20:19:14.602991"], ["updated_at", "2019-01-16 20:19:14.602991"]]
+  [1m[35m (44.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "quis"], ["created_by", "1"], ["created_at", "2019-01-16 20:19:14.651344"], ["updated_at", "2019-01-16 20:19:14.651344"]]
+  [1m[35m (48.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "totam"], ["done", "f"], ["todo_id", 53], ["created_at", "2019-01-16 20:19:14.703264"], ["updated_at", "2019-01-16 20:19:14.703264"]]
+  [1m[35m (51.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/todos?page=2" for 127.0.0.1 at 2019-01-16 14:19:43 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"2", "contraints"=>#<ApiVersion:0x0056357d6f2c60 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "1"], ["LIMIT", 20], ["OFFSET", 20]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 23]]
+[active_model_serializers] No serializer found for resource: #<Item id: 22, name: "facilis", done: false, todo_id: 23, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 24]]
+[active_model_serializers] No serializer found for resource: #<Item id: 23, name: "id", done: false, todo_id: 24, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 25]]
+[active_model_serializers] No serializer found for resource: #<Item id: 24, name: "fugiat", done: false, todo_id: 25, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 26]]
+[active_model_serializers] No serializer found for resource: #<Item id: 25, name: "rerum", done: false, todo_id: 26, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 27]]
+[active_model_serializers] No serializer found for resource: #<Item id: 26, name: "explicabo", done: false, todo_id: 27, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 28]]
+[active_model_serializers] No serializer found for resource: #<Item id: 27, name: "nulla", done: false, todo_id: 28, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 29]]
+[active_model_serializers] No serializer found for resource: #<Item id: 28, name: "dignissimos", done: false, todo_id: 29, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 30]]
+[active_model_serializers] No serializer found for resource: #<Item id: 29, name: "sed", done: false, todo_id: 30, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 31]]
+[active_model_serializers] No serializer found for resource: #<Item id: 30, name: "enim", done: false, todo_id: 31, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 32]]
+[active_model_serializers] No serializer found for resource: #<Item id: 31, name: "qui", done: false, todo_id: 32, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 33]]
+[active_model_serializers] No serializer found for resource: #<Item id: 32, name: "id", done: false, todo_id: 33, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 34]]
+[active_model_serializers] No serializer found for resource: #<Item id: 33, name: "quae", done: false, todo_id: 34, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 35]]
+[active_model_serializers] No serializer found for resource: #<Item id: 34, name: "cum", done: false, todo_id: 35, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 36]]
+[active_model_serializers] No serializer found for resource: #<Item id: 35, name: "dolores", done: false, todo_id: 36, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 37]]
+[active_model_serializers] No serializer found for resource: #<Item id: 36, name: "veritatis", done: false, todo_id: 37, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 38]]
+[active_model_serializers] No serializer found for resource: #<Item id: 37, name: "ut", done: false, todo_id: 38, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 39]]
+[active_model_serializers] No serializer found for resource: #<Item id: 38, name: "velit", done: false, todo_id: 39, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 40]]
+[active_model_serializers] No serializer found for resource: #<Item id: 39, name: "aut", done: false, todo_id: 40, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 41]]
+[active_model_serializers] No serializer found for resource: #<Item id: 40, name: "in", done: false, todo_id: 41, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 42]]
+[active_model_serializers] No serializer found for resource: #<Item id: 41, name: "cum", done: false, todo_id: 42, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] No serializer found for resource: #<Item id: 22, name: "facilis", done: false, todo_id: 23, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 23, name: "id", done: false, todo_id: 24, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 24, name: "fugiat", done: false, todo_id: 25, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 25, name: "rerum", done: false, todo_id: 26, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 26, name: "explicabo", done: false, todo_id: 27, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 27, name: "nulla", done: false, todo_id: 28, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 28, name: "dignissimos", done: false, todo_id: 29, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 29, name: "sed", done: false, todo_id: 30, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 30, name: "enim", done: false, todo_id: 31, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 31, name: "qui", done: false, todo_id: 32, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 32, name: "id", done: false, todo_id: 33, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 33, name: "quae", done: false, todo_id: 34, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 34, name: "cum", done: false, todo_id: 35, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 35, name: "dolores", done: false, todo_id: 36, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 36, name: "veritatis", done: false, todo_id: 37, created_at: "2019-01-16 20:19:12", updated_at: "2019-01-16 20:19:12">
+[active_model_serializers] No serializer found for resource: #<Item id: 37, name: "ut", done: false, todo_id: 38, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] No serializer found for resource: #<Item id: 38, name: "velit", done: false, todo_id: 39, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] No serializer found for resource: #<Item id: 39, name: "aut", done: false, todo_id: 40, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] No serializer found for resource: #<Item id: 40, name: "in", done: false, todo_id: 41, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] No serializer found for resource: #<Item id: 41, name: "cum", done: false, todo_id: 42, created_at: "2019-01-16 20:19:13", updated_at: "2019-01-16 20:19:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (71.09ms)
+Completed 200 OK in 126ms (Views: 90.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/todos?page=1" for 127.0.0.1 at 2019-01-16 14:19:47 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"1", "contraints"=>#<ApiVersion:0x0056357d6f2c60 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "1"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 3]]
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 4]]
+[active_model_serializers] No serializer found for resource: #<Item id: 3, name: "soluta", done: false, todo_id: 4, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 5]]
+[active_model_serializers] No serializer found for resource: #<Item id: 4, name: "voluptatibus", done: false, todo_id: 5, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 6]]
+[active_model_serializers] No serializer found for resource: #<Item id: 5, name: "ipsum", done: false, todo_id: 6, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 7]]
+[active_model_serializers] No serializer found for resource: #<Item id: 6, name: "et", done: false, todo_id: 7, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 8]]
+[active_model_serializers] No serializer found for resource: #<Item id: 7, name: "sunt", done: false, todo_id: 8, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 9]]
+[active_model_serializers] No serializer found for resource: #<Item id: 8, name: "enim", done: false, todo_id: 9, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 10]]
+[active_model_serializers] No serializer found for resource: #<Item id: 9, name: "non", done: false, todo_id: 10, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 11]]
+[active_model_serializers] No serializer found for resource: #<Item id: 10, name: "ex", done: false, todo_id: 11, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 12]]
+[active_model_serializers] No serializer found for resource: #<Item id: 11, name: "magnam", done: false, todo_id: 12, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 13]]
+[active_model_serializers] No serializer found for resource: #<Item id: 12, name: "dolorem", done: false, todo_id: 13, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 14]]
+[active_model_serializers] No serializer found for resource: #<Item id: 13, name: "ducimus", done: false, todo_id: 14, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 15]]
+[active_model_serializers] No serializer found for resource: #<Item id: 14, name: "ab", done: false, todo_id: 15, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 16]]
+[active_model_serializers] No serializer found for resource: #<Item id: 15, name: "qui", done: false, todo_id: 16, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 17]]
+[active_model_serializers] No serializer found for resource: #<Item id: 16, name: "iusto", done: false, todo_id: 17, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 18]]
+[active_model_serializers] No serializer found for resource: #<Item id: 17, name: "rerum", done: false, todo_id: 18, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 19]]
+[active_model_serializers] No serializer found for resource: #<Item id: 18, name: "molestiae", done: false, todo_id: 19, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 20]]
+[active_model_serializers] No serializer found for resource: #<Item id: 19, name: "vero", done: false, todo_id: 20, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 21]]
+[active_model_serializers] No serializer found for resource: #<Item id: 20, name: "et", done: false, todo_id: 21, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 22]]
+[active_model_serializers] No serializer found for resource: #<Item id: 21, name: "nihil", done: false, todo_id: 22, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 2, name: "Listen to Don Giovanni", done: nil, todo_id: 3, created_at: "2019-01-16 20:11:03", updated_at: "2019-01-16 20:11:03">
+[active_model_serializers] No serializer found for resource: #<Item id: 3, name: "soluta", done: false, todo_id: 4, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 4, name: "voluptatibus", done: false, todo_id: 5, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 5, name: "ipsum", done: false, todo_id: 6, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 6, name: "et", done: false, todo_id: 7, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 7, name: "sunt", done: false, todo_id: 8, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 8, name: "enim", done: false, todo_id: 9, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 9, name: "non", done: false, todo_id: 10, created_at: "2019-01-16 20:19:09", updated_at: "2019-01-16 20:19:09">
+[active_model_serializers] No serializer found for resource: #<Item id: 10, name: "ex", done: false, todo_id: 11, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 11, name: "magnam", done: false, todo_id: 12, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 12, name: "dolorem", done: false, todo_id: 13, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 13, name: "ducimus", done: false, todo_id: 14, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 14, name: "ab", done: false, todo_id: 15, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 15, name: "qui", done: false, todo_id: 16, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 16, name: "iusto", done: false, todo_id: 17, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 17, name: "rerum", done: false, todo_id: 18, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 18, name: "molestiae", done: false, todo_id: 19, created_at: "2019-01-16 20:19:10", updated_at: "2019-01-16 20:19:10">
+[active_model_serializers] No serializer found for resource: #<Item id: 19, name: "vero", done: false, todo_id: 20, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 20, name: "et", done: false, todo_id: 21, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] No serializer found for resource: #<Item id: 21, name: "nihil", done: false, todo_id: 22, created_at: "2019-01-16 20:19:11", updated_at: "2019-01-16 20:19:11">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (74.18ms)
+Completed 200 OK in 79ms (Views: 73.2ms | ActiveRecord: 4.2ms)
+
+
