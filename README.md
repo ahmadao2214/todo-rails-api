@@ -21,31 +21,26 @@ rspec
 
 # Usage
 
-## Todos
-### GET
-### POST
-### PUT
-### DELETE
+- POST /signup
+- POST /auth/login
+- GET /auth/logout
+- GET /todos
+- POST /todos
+- GET /todos/:id
+- PUT /todos/:id
+- DELETE /todos/:id
+- GET /todos/:id/items
+- PUT /todos/:id/items
+- DELETE /todos/:id/items
 
-## Items
-### GET
-### POST
-### PUT
-### DELETE
-
-## Authentication & Authorization
-### No token
-### Signup
-### New user
-### Todo for new user
-### Todo list
+## Authentication
 
 ## Versioning
-### v1
-### v2
+- Accept: application/vnd.todos.v1+json
+- Accept: application/vnd.todos.v2+json
 
 ## Serialization
+- Get Todos with Items
 
 ## Pagination
 
-# Improvements
