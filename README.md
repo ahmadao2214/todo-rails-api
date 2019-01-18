@@ -33,8 +33,6 @@ rspec
 - PUT /todos/:id/items
 - DELETE /todos/:id/items
 
-## Authentication
-
 ## Versioning
 - Accept: application/vnd.todos.v1+json
 - Accept: application/vnd.todos.v2+json
@@ -43,4 +41,4 @@ rspec
 - Get Todos with Items
 
 ## Pagination
-
+:3000/todos?page=2
