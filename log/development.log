@@ -1257,3 +1257,200 @@ Processing by V1::TodosController#index as application/vnd.todos.v1+json
 Completed 200 OK in 79ms (Views: 73.2ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/todos" for 127.0.0.1 at 2019-01-18 00:42:10 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 33ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos?page=1" for 127.0.0.1 at 2019-01-18 00:42:16 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"1", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos?page=1" for 127.0.0.1 at 2019-01-18 00:42:26 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"page"=>"1", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/login?email=foo@bar.com&password=[FILTERED]" for 127.0.0.1 at 2019-01-18 00:43:08 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/auth/login"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/signup/?name=az&email=az@email.com&password=[FILTERED]&password_confirmation=[FILTERED]" for 127.0.0.1 at 2019-01-18 00:43:43 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"az", "email"=>"az@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (19.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "az"], ["email", "az@email.com"], ["password_digest", "$2a$10$TGNEE7YgFRkcqfhS0Fw0e.3Da9XZzHwQj.L27at5jdiHgPt7Ariem"], ["created_at", "2019-01-18 06:43:43.989062"], ["updated_at", "2019-01-18 06:43:43.989062"]]
+  [1m[35m (81.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "az@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "az@email.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 447ms (Views: 1.6ms | ActiveRecord: 101.8ms)
+
+
+Started POST "/todos" for 127.0.0.1 at 2019-01-18 00:51:09 -0600
+Processing by V1::TodosController#create as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :contraints
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 1294ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/todos" for 127.0.0.1 at 2019-01-18 00:51:16 -0600
+Processing by V1::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (21.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "3"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 224ms (Views: 200.8ms | ActiveRecord: 21.7ms)
+
+
+Started POST "/todos?title=Azhar%27s%20Todo%20List" for 127.0.0.1 at 2019-01-18 00:52:00 -0600
+Processing by V1::TodosController#create as */*
+  Parameters: {"title"=>"Azhar's Todo List", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :contraints
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_by", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Azhar's Todo List"], ["created_by", "3"], ["created_at", "2019-01-18 06:52:00.801327"], ["updated_at", "2019-01-18 06:52:00.801327"]]
+  [1m[35m (99.9ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mItem Load (5.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (31.49ms)
+Completed 201 Created in 181ms (Views: 68.7ms | ActiveRecord: 106.0ms)
+
+
+Started POST "/todos/54/items?name=Finish%20Readme&done=False" for 127.0.0.1 at 2019-01-18 00:53:05 -0600
+Processing by V1::ItemsController#create as */*
+  Parameters: {"name"=>"Finish Readme", "done"=>"False", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>, "todo_id"=>"54"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+Unpermitted parameters: :contraints, :todo_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (29.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "done", "todo_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Finish Readme"], ["done", "t"], ["todo_id", 54], ["created_at", "2019-01-18 06:53:05.156140"], ["updated_at", "2019-01-18 06:53:05.156140"]]
+  [1m[35m (73.3ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:53:05">
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (12.19ms)
+Completed 201 Created in 143ms (Views: 13.0ms | ActiveRecord: 103.7ms)
+
+
+Started GET "/todos/54/" for 127.0.0.1 at 2019-01-18 00:53:16 -0600
+Processing by V1::TodosController#show as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>, "id"=>"54"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:53:05">
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (1.82ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/todos/54/items/53?done=false" for 127.0.0.1 at 2019-01-18 00:53:48 -0600
+Processing by V1::ItemsController#update as */*
+  Parameters: {"done"=>"false", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>, "todo_id"=>"54", "id"=>"53"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."todo_id" = ? AND "items"."id" = ? LIMIT ?[0m  [["todo_id", 54], ["id", 53], ["LIMIT", 1]]
+Unpermitted parameters: :contraints, :todo_id, :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "items" SET "done" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["done", "f"], ["updated_at", "2019-01-18 06:53:48.899715"], ["id", 53]]
+  [1m[35m (85.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 95ms (ActiveRecord: 86.8ms)
+
+
+Started GET "/todos/54" for 127.0.0.1 at 2019-01-18 00:53:57 -0600
+Processing by V1::TodosController#show as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>, "id"=>"54"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: false, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:53:48">
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (2.82ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/todos/54/items/53?done=true" for 127.0.0.1 at 2019-01-18 00:54:21 -0600
+Processing by V1::ItemsController#update as */*
+  Parameters: {"done"=>"true", "contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>, "todo_id"=>"54", "id"=>"53"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."todo_id" = ? AND "items"."id" = ? LIMIT ?[0m  [["todo_id", 54], ["id", 53], ["LIMIT", 1]]
+Unpermitted parameters: :contraints, :todo_id, :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "items" SET "done" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["done", "t"], ["updated_at", "2019-01-18 06:54:21.932565"], ["id", 53]]
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 94ms (ActiveRecord: 87.0ms)
+
+
+Started GET "/todos/" for 127.0.0.1 at 2019-01-18 00:54:27 -0600
+Processing by V1::TodosController#index as */*
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "3"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:54:21">
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:54:21">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.23ms)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/todos/" for 127.0.0.1 at 2019-01-18 00:55:59 -0600
+Processing by V1::TodosController#create as application/vnd.todos.v2+json
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :contraints
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todos/" for 127.0.0.1 at 2019-01-18 00:56:06 -0600
+Processing by V2::TodosController#index as application/vnd.todos.v2+json
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todos/" for 127.0.0.1 at 2019-01-18 00:56:10 -0600
+Processing by V1::TodosController#index as application/vnd.todos.v1+json
+  Parameters: {"contraints"=>#<ApiVersion:0x005567d0b2e278 @version="v1", @default=true>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."created_by" = ? LIMIT ? OFFSET ?[0m  [["created_by", "3"], ["LIMIT", 20], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."todo_id" = ?[0m  [["todo_id", 54]]
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:54:21">
+[active_model_serializers] No serializer found for resource: #<Item id: 53, name: "Finish Readme", done: true, todo_id: 54, created_at: "2019-01-18 06:53:05", updated_at: "2019-01-18 06:54:21">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.65ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+
+

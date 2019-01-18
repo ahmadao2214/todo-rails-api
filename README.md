@@ -1,24 +1,51 @@
-# README
+# Rails API only Todo Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API only todo application built with Ruby on Rails following these guides:
+- https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one
+- https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-two
+- https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-three
 
-Things you may want to cover:
+## Gettin started
+```
+git clone https://github.com/ahmadao2214/todo-rails-api.git
+cd todo-rails-api
+bundle install
+rails s
+```
 
-* Ruby version
+## Testing
+```
+cd todo-rails-api
+rspec
+```
 
-* System dependencies
+# Usage
 
-* Configuration
+## Todos
+### GET
+### POST
+### PUT
+### DELETE
 
-* Database creation
+## Items
+### GET
+### POST
+### PUT
+### DELETE
 
-* Database initialization
+## Authentication & Authorization
+### No token
+### Signup
+### New user
+### Todo for new user
+### Todo list
 
-* How to run the test suite
+## Versioning
+### v1
+### v2
 
-* Services (job queues, cache servers, search engines, etc.)
+## Serialization
 
-* Deployment instructions
+## Pagination
 
-* ...
+# Improvements
